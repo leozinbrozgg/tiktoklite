@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,91 +12,118 @@
         /* Estilos personalizados */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f7f7f7; /* Fundo cinza claro */
+            background-color: #f7f7f7;
+            /* Fundo cinza claro */
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 1rem;
         }
+
         .container {
             background-color: #ffffff;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            max-width: 420px; /* Tamanho de celular */
+            max-width: 420px;
+            /* Tamanho de celular */
         }
+
         /* Cor de destaque baseada no TikTok/Vibrante */
         .color-primary {
-            background-color: #FE2C55; /* TikTok Red */
+            background-color: #FE2C55;
+            /* TikTok Red */
         }
+
         .text-primary {
             color: #FE2C55;
         }
+
         .step-card {
-            border-left: 5px solid #FE2C55; /* Linha de destaque para o passo */
+            border-left: 5px solid #FE2C55;
+            /* Linha de destaque para o passo */
         }
+
         .btn-cyan {
-            background-color: #00F2EA; /* TikTok Cyan */
+            background-color: #00F2EA;
+            /* TikTok Cyan */
             color: #1a1a1a;
             font-weight: 700;
             transition: all 0.2s;
         }
+
         .btn-cyan:hover {
             background-color: #00BFFF;
         }
+
         .btn-red {
             background-color: #FE2C55;
             color: white;
             font-weight: 700;
         }
+
         .btn-red:hover {
             background-color: #D62747;
         }
+
         .btn-whatsapp {
-            background-color: #25D366; /* WhatsApp Green */
+            background-color: #25D366;
+            /* WhatsApp Green */
             color: white;
             font-weight: 700;
         }
+
         .btn-whatsapp:hover {
             background-color: #1DA851;
         }
-        
+
         /* NOVO: Estilo para a caixa de simulação - AGORA FLUTUANTE */
         .simulation-box {
-            position: fixed; /* Fixa na tela */
-            top: 20px; /* Distância do topo */
-            right: 20px; /* Distância da direita */
-            z-index: 1000; /* Garante que fique acima de tudo */
-            
-            background-color: #00BCD4; /* Fundo ciano escuro */
-            color: white; /* Texto branco */
+            position: fixed;
+            /* Fixa na tela */
+            top: 20px;
+            /* Distância do topo */
+            right: 20px;
+            /* Distância da direita */
+            z-index: 1000;
+            /* Garante que fique acima de tudo */
+
+            background-color: #00BCD4;
+            /* Fundo ciano escuro */
+            color: white;
+            /* Texto branco */
             /* Aumentando a largura máxima para dar mais espaço, mas limitando para telas pequenas */
-            max-width: calc(100vw - 40px); 
-            padding: 8px 15px; 
-            border-radius: 9999px; /* Arredondado para parecer um chip */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
-            font-size: 0.875rem; 
+            max-width: calc(100vw - 40px);
+            padding: 8px 15px;
+            border-radius: 9999px;
+            /* Arredondado para parecer um chip */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            font-size: 0.875rem;
             font-weight: 700;
 
             /* Inicia fora da tela e escondido */
-            transform: translateX(120%); /* Move 120% para fora da tela (direita) */
+            transform: translateX(120%);
+            /* Move 120% para fora da tela (direita) */
             opacity: 0;
-            transition: transform 0.6s ease-out, opacity 0.6s ease-out; /* Adiciona transição para animação */
-            white-space: nowrap; /* Garante que o texto fique em uma linha */
+            transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+            /* Adiciona transição para animação */
+            white-space: nowrap;
+            /* Garante que o texto fique em uma linha */
         }
-        
+
         /* Classe para mostrar a simulação (acionada via JS) */
         .simulation-box.show {
-            transform: translateX(0); /* Desliza para dentro */
-            opacity: 1; /* Fica visível */
+            transform: translateX(0);
+            /* Desliza para dentro */
+            opacity: 1;
+            /* Fica visível */
         }
 
         .simulation-box #simulation-text {
-            display: block; 
+            display: block;
         }
-
-
     </style>
 </head>
+
 <body class="bg-gray-100">
 
 
@@ -106,57 +134,19 @@
 
 
     <div id="app-container" class="container w-full rounded-2xl p-6 md:p-8">
-        
-        <!-- HEADER: Oferta Destacada -->
-        <header class="text-center mb-8">
-            <div class="inline-block px-4 py-2 rounded-full font-extrabold text-white text-lg bg-red-600 shadow-xl transform hover:scale-105 transition duration-300 ease-in-out">
-                💥 R$5,00 REAIS NO PIX NA HORA 💥
-            </div>
-            <h1 class="text-3xl font-bold mt-4 text-gray-800">Tutorial TikTok Lite</h1>
-            <p class="text-gray-500 mt-1">Siga todos os passos abaixo para garantir sua recompensa.</p>
-        </header>
 
 
         <!-- CONTEÚDO ESTÁTICO DOS PASSOS -->
         <div id="step-list" class="space-y-6">
-            
-            <!-- PASSO 1: Instalação -->
-            <div class="step-card p-4 rounded-xl shadow-md bg-gray-50">
-                <h2 class="text-xl font-bold text-gray-800 mb-2">1️⃣ Instalar TIKTOK LITE</h2>
-                <p class="text-gray-600 mb-4">Clique no botão abaixo para ir à loja de aplicativos. Baixe e instale o TikTok Lite.</p>
-                <a href="https://play.google.com/store/search?q=tiktok+lite&c=apps" target="_blank" class="btn-cyan w-full flex items-center justify-center py-3 rounded-xl shadow-md hover:shadow-lg transition">
-                    IR PARA LOJA (Instalar App)
-                </a>
-            </div>
-
 
             <!-- PASSO 2: Clicar no Link de Convite (Passo Mais Importante) -->
             <div class="step-card p-4 rounded-xl shadow-md bg-gray-50">
-                <h2 class="text-xl font-bold text-primary mb-2">2️⃣ Clicar no Link</h2>
-                <p class="text-gray-600 mb-4 font-semibold">🚨 **ATENÇÃO!** Após instalar o app, volte aqui e clique no link abaixo para ativar a promoção de R$5,00. É essencial!</p>
-                <a href="https://vm.tiktok.com/ZSHTDQjUrKUYU-ArUgF/" target="_blank" class="btn-red w-full flex items-center justify-center py-3 rounded-xl shadow-md hover:shadow-lg transition">
+                <h2 class="text-xl font-bold text-primary mb-2">🎯 Clicar no Link</h2>
+                <p class="text-gray-600 mb-4 font-semibold">🚨 **ATENÇÃO!** Clique no link abaixo para ativar a promoção
+                    de R$5,00. É essencial!</p>
+                <a href="https://vm.tiktok.com/ZSHTDQjUrKUYU-ArUgF/" target="_blank"
+                    class="btn-red w-full flex items-center justify-center py-3 rounded-xl shadow-md hover:shadow-lg transition">
                     CLIQUE AQUI NO MEU LINK!
-                </a>
-            </div>
-
-
-            <!-- PASSO 3: Login e Confirmação -->
-            <div class="step-card p-4 rounded-xl shadow-md bg-gray-50">
-                <h2 class="text-xl font-bold text-gray-800 mb-2">3️⃣ Fazer login na conta principal</h2>
-                <p class="text-gray-600 mb-4">Dentro do TikTok Lite, faça o login (preferencialmente **via Google**). Uma tela de convite aparecerá. **CONFIRME** que você aceita o bônus.</p>
-                <a href="https://vm.tiktok.com/ZSHTDQjUrKUYU-ArUgF/" target="_blank" class="btn-cyan w-full flex items-center justify-center py-3 rounded-xl shadow-md hover:shadow-lg transition">
-                    Continuar no TikTok Lite
-                </a>
-            </div>
-
-
-            <!-- PASSO 4: Enviar o Print e Receber o Pix -->
-            <div class="step-card p-4 rounded-xl shadow-md bg-gray-50">
-                <h2 class="text-xl font-bold text-gray-800 mb-2">4️⃣ Manda Print do *BEM SUCEDIDO*</h2>
-                <p class="text-gray-600 mb-4 font-bold">Se tudo deu certo, você verá a tela de "BEM SUCEDIDO". Tire um print claro e envie-o para mim imediatamente para receber seus R$5,00 no Pix!</p>
-                <!-- LINK PARA O NÚMERO DO WHATSAPP -->
-                <a href="https://wa.me/5515998392835" target="_blank" class="btn-whatsapp w-full flex items-center justify-center py-3 rounded-xl shadow-md hover:shadow-lg transition">
-                    ENVIAR PRINT (WhatsApp)
                 </a>
             </div>
 
@@ -170,14 +160,14 @@
     <script>
         // O link de indicação do usuário (mantido apenas como referência)
         const TIKTOK_LINK = "https://vm.tiktok.com/ZSHTDQjUrKUYU-ArUgF/";
-        
+
         // --- Lógica da Simulação de Ganhos ---
 
 
         // Nomes brasileiros comuns para simular ganhos
         const BRAZILIAN_NAMES = [
-            "João", "Maria", "Pedro", "Ana", "Lucas", "Julia", "Gabriel", "Isabela", 
-            "Mateus", "Larissa", "Rafael", "Manuela", "Felipe", "Giovanna", "Guilherme", 
+            "João", "Maria", "Pedro", "Ana", "Lucas", "Julia", "Gabriel", "Isabela",
+            "Mateus", "Larissa", "Rafael", "Manuela", "Felipe", "Giovanna", "Guilherme",
             "Beatriz", "Vinicius", "Amanda", "Bruno", "Leticia", "Rafaela", "Daniel"
         ];
 
@@ -213,9 +203,10 @@
 
         // Inicia a simulação APENAS UMA VEZ quando o DOM estiver completamente carregado
         document.addEventListener('DOMContentLoaded', () => {
-            updateSimulation(); 
+            updateSimulation();
         });
-        
+
     </script>
 </body>
+
 </html>
